@@ -194,6 +194,7 @@ fetch_data() {
 
     jq -n \
         --arg ts "$fetch_timestamp" \
+        --arg source_url "${KB_SOURCE_URL:-}" \
         --argjson sc "$services_count" \
         --argjson csc "$case_studies_count" \
         --slurpfile services "$TMP_DIR/_services.json" \
@@ -202,7 +203,7 @@ fetch_data() {
             metadata: {
                 fetched_at: $ts,
                 source: "CX Service Map (Strapi CMS)",
-                source_url: "CX Service Map (Strapi CMS)",
+                source_url: $source_url,
                 services_count: $sc,
                 case_studies_count: $csc
             },
