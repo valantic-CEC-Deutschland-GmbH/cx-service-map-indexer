@@ -272,8 +272,9 @@ analyze_with_claude() {
         --effort "$EFFORT" \
         --no-session-persistence \
         --dangerously-skip-permissions \
+        --tools "Read,Glob,Grep" \
         --system-prompt "$(cat "$PROMPT_FILE")" \
-        "Analyze the CX Service Map data. Start by reading raw_data.json for the complete dataset of services and case studies." \
+        "Analyze the CX Service Map data. Start by reading raw_data.json for the complete dataset of services and case studies. Output the full markdown document as your response — do not write any files." \
         < /dev/null) || exit_code=$?
 
     if [[ $exit_code -ne 0 ]]; then

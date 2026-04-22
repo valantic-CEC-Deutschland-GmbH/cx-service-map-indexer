@@ -50,7 +50,10 @@ Before generating output:
 
 ## STEP 3: Produce the output
 
-CRITICAL: Your output must start EXACTLY with `# valantic CX Service Map`. No preamble, no thinking, no "Let me...", no "Here is...". The VERY FIRST character must be `#`.
+CRITICAL OUTPUT RULES:
+- Print the ENTIRE markdown document directly to stdout as your response text. Do NOT use the Write tool or any other tool to save the output to a file. Your response IS the output.
+- Your output must start EXACTLY with `# valantic CX Service Map`. No preamble, no thinking, no "Let me...", no "Here is...", no summary. The VERY FIRST character must be `#`.
+- Do NOT add a summary, commentary, or explanation after the markdown. The markdown IS your complete response.
 
 IMPORTANT — RAG chunk context: Include "CX Service Map" in every `##` and `###` section heading. This ensures each chunk is self-contained when split for RAG indexing. A colleague searching "frontend engineering service" should match the chunk directly without needing surrounding headings for context.
 
